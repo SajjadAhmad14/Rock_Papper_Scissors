@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script>
+    
+    function computerPlay() {
+        let ar = ["rock", "papper", "scissors"];
+        return ar[Math.floor(Math.random() * ar.length)];
+
+    }
+    function playRound(playerSelection, computerSelection ) {
+        playerSelection = playerSelection.toUpperCase();
+        computerSelection = computerSelection.toUpperCase();
+        let rock = "ROCK";
+        let papper = "PAPPER";
+        let scissors = "SCISSORS";
+        if (playerSelection == rock && computerSelection == papper) {
+            alert("You lost! Papper covers rock!")
+        }
+        else if (playerSelection == papper && computerSelection == rock) {
+            alert("You won! Papper covers rock!");
+        }
+        else if (playerSelection == rock && computerSelection == scissors) {
+            alert("You won! rock breaks scissors!");
+        }
+        else if (playerSelection == scissors && computerSelection == rock) {
+            alert("You lost! rock breaks scissors!");
+        }
+        else if (playerSelection == papper && computerSelection == scissors) {
+            alert("You lost! scissors cuts rock!");
+        }
+        else if (playerSelection == scissors && computerSelection == papper) {
+            alert("You won! scissors cuts rock!");
+        }
+        else {
+            alert("Play game again!")
+        }
+    
+    }
+    function game() {
+        let playerTurn = prompt("Please enter your object!");
+        playRound(playerTurn, computerPlay())
+        playRound(playerTurn, computerPlay())
+        playRound(playerTurn, computerPlay())
+        playRound(playerTurn, computerPlay())
+        playRound(playerTurn, computerPlay())
+    }
+    game();
+</script>
+</head>
+</html>
